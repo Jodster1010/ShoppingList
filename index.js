@@ -1,6 +1,3 @@
-//add new items
-//submit and inclue event.preventDefault()
-//submission is cleared?
 'use strict';
 function getUserInput() {
   return $('#shopping-list-entry').val();
@@ -25,12 +22,8 @@ function generateHtmlItem(item) {
 function addResults(html) { 
   $('.shopping-list').append(html); 
 }
-//toggle checked/unchecked
-//toggleClass() "shopping-item shopping-item__checked"
 
-//delete items
 
-//submit()
 function main() {
   $('#js-shopping-list-form').submit(function (event) {
     event.preventDefault();
@@ -51,4 +44,3 @@ function main() {
 }
 
 $(main);
-//closet() is probably needed?
