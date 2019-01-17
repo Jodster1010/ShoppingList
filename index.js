@@ -21,11 +21,29 @@ function generateHtmlItem(item) {
       </li>
   `;
 }
+
+function addResults(html) { 
+  $('.shopping-list').append(html); 
+}
 //toggle checked/unchecked
 //toggleClass() "shopping-item shopping-item__checked"
 
 //delete items
 
 //submit()
+function main() {
+  $('#js-shopping-list-form').submit(function (event) {
+    event.preventDefault();
+    const item = getUserInput();
+    this.reset();
+    const html = generateHtmlItem(item);
+    addResults(html);
+    $('.shopping-item-toggle').on('click', event => {
+      const targetItem = $(event.currentTarget).closest('.shopping-item');
+      targetItem.toggleClass('.shopping-item shopping-item__checked');
+    });
+  });
+}
 
+$(main);
 //closet() is probably needed?
