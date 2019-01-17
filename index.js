@@ -38,10 +38,15 @@ function main() {
     this.reset();
     const html = generateHtmlItem(item);
     addResults(html);
-    $('.shopping-item-toggle').on('click', event => {
-      const targetItem = $(event.currentTarget).closest('.shopping-item');
-      targetItem.toggleClass('.shopping-item shopping-item__checked');
-    });
+  });
+  $('.shopping-list').on('click', '.shopping-item-toggle', event => {
+    //   const targetItem = $(event.currentTarget).closest('li');
+    //   console.log('test', targetItem);
+    //   targetItem.toggleClass('.shopping-item__checked');
+    $(event.currentTarget).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+  });
+  $('.shopping-list').on('click', '.shopping-item-delete', event => {
+    $(event.currentTarget).closest('li').remove();
   });
 }
 
